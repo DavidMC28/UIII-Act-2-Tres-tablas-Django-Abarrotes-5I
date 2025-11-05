@@ -1,3 +1,7 @@
+¡Entendido! Aquí tienes el proyecto completo, incluyendo los pasos iniciales que me proporcionaste y lo que faltaba para completarlo, todo en un solo bloque.
+
+---
+
 ¡Excelente! Vamos a crear este proyecto de Abarrotes con Django paso a paso.
 
 Aquí tienes la guía completa, incluyendo la estructura de carpetas y archivos, y el código necesario.
@@ -19,7 +23,7 @@ UIII_Abarrotes_0633/
 │   │   │   └── __init__.py
 │   │   ├── templates/
 │   │   │   ├── base.html
-│   │   │   ├── header.html
+│   │   │   ├── header.html (No se utiliza directamente, pero se puede mantener si se desea separar el header de la base.html)
 │   │   │   ├── navbar.html
 │   │   │   ├── footer.html
 │   │   │   ├── inicio.html
@@ -40,7 +44,7 @@ UIII_Abarrotes_0633/
 
 ### Procedimientos Detallados:
 
-**1. Procedimiento para crear carpeta del Proyecto: UIII_Abarrotes_0633**
+**1. Procedimiento para crear carpeta del Proyecto: `UIII_Abarrotes_0633`**
 
 Abre tu terminal (o cmd en Windows) y ejecuta:
 
@@ -49,7 +53,7 @@ mkdir UIII_Abarrotes_0633
 cd UIII_Abarrotes_0633
 ```
 
-**2. Procedimiento para abrir VS Code sobre la carpeta UIII_Abarrotes_0633**
+**2. Procedimiento para abrir VS Code sobre la carpeta `UIII_Abarrotes_0633`**
 
 Desde la terminal, estando dentro de `UIII_Abarrotes_0633`:
 
@@ -61,7 +65,7 @@ Esto abrirá VS Code en la raíz de tu proyecto.
 
 **3. Procedimiento para abrir terminal en VS Code**
 
-Dentro de VS Code, ve a `Terminal` -> `New Terminal` (o usa el atajo `Ctrl + Shift + Ñ`).
+Dentro de VS Code, ve a `Terminal -> New Terminal` (o usa el atajo `Ctrl + Shift + Ñ` o `Cmd + Shift + P` y busca "New Terminal").
 
 **4. Procedimiento para crear carpeta entorno virtual ".venv" desde terminal de VS Code**
 
@@ -75,14 +79,14 @@ python -m venv .venv
 
 En la terminal de VS Code:
 
-*   **Windows:**
-    ```bash
-    .venv\Scripts\activate
-    ```
-*   **macOS/Linux:**
-    ```bash
-    source .venv/bin/activate
-    ```
+**Windows:**
+```bash
+.venv\Scripts\activate
+```
+**macOS/Linux:**
+```bash
+source .venv/bin/activate
+```
 Verás `(.venv)` al inicio de tu prompt si se activó correctamente.
 
 **6. Procedimiento para activar intérprete de python.**
@@ -101,7 +105,7 @@ Con el entorno virtual activado:
 pip install Django
 ```
 
-**8. Procedimiento para crear proyecto backend_Abarrotes sin duplicar carpeta.**
+**8. Procedimiento para crear proyecto `backend_Abarrotes` sin duplicar carpeta.**
 
 ```bash
 django-admin startproject backend_Abarrotes .
@@ -116,19 +120,17 @@ python manage.py runserver 8036
 
 **10. Procedimiento para copiar y pegar el link en el navegador.**
 
-Una vez que ejecutes el servidor, en la terminal aparecerá una línea como esta:
-`Starting development server at http://127.0.0.1:8036/`
-Copia `http://127.0.0.1:8036/` y pégalo en tu navegador.
+Una vez que ejecutes el servidor, en la terminal aparecerá una línea como esta: `Starting development server at http://127.0.0.1:8036/` Copia `http://127.0.0.1:8036/` y pégalo en tu navegador.
 
-**11. Procedimiento para crear aplicación app_Abarrotes**
+**11. Procedimiento para crear aplicación `app_Abarrotes`**
 
-Detén el servidor (Ctrl+C) si está corriendo y luego ejecuta:
+Detén el servidor (`Ctrl+C`) si está corriendo y luego ejecuta:
 
 ```bash
 python manage.py startapp app_Abarrotes
 ```
 
-**12. Aquí el modelo models.py**
+**12. Aquí el modelo `models.py`**
 
 Edita el archivo `app_Abarrotes/models.py` con el siguiente contenido:
 
@@ -194,7 +196,7 @@ class Venta(models.Model):
         return f"Venta {self.id} - {self.fecha}"
 ```
 
-**12.5 Procedimiento para realizar las migraciones (makemigrations y migrate).**
+**12.5 Procedimiento para realizar las migraciones (`makemigrations` y `migrate`).**
 
 ```bash
 python manage.py makemigrations app_Abarrotes
@@ -203,7 +205,7 @@ python manage.py migrate
 
 **13. Primero trabajamos con el MODELO: EMPLEADO**
 
-**14. En views de app_Abarrotes crear las funciones con sus códigos correspondientes (inicio_abarrotes, agregar_empleado, actualizar_empleado, realizar_actualizacion_empleado, borrar_empleado)**
+**14. En `views` de `app_Abarrotes` crear las funciones con sus códigos correspondientes (`inicio_abarrotes`, `agregar_empleado`, `actualizar_empleado`, `borrar_empleado`)**
 
 Edita el archivo `app_Abarrotes/views.py`:
 
@@ -273,18 +275,17 @@ def borrar_empleado(request, id_empleado):
         empleado.delete()
         return redirect('ver_empleados')
     return render(request, 'empleado/borrar_empleado.html', {'empleado': empleado})
-
 ```
 
 **15. Crear la carpeta "templates" dentro de "app_Abarrotes".**
 
 Ya está en la estructura de archivos que te di, asegúrate de que exista.
 
-**16. En la carpeta templates crear los archivos html (base.html, header.html, navbar.html, footer.html, inicio.html).**
+**16. En la carpeta `templates` crear los archivos html (`base.html`, `header.html`, `navbar.html`, `footer.html`, `inicio.html`).**
 
 Y la subcarpeta `empleado` dentro de `templates` con sus archivos.
 
-**17. En el archivo base.html agregar bootstrap para css y js.**
+**17. En el archivo `base.html` agregar bootstrap para css y js.**
 
 Crea o edita `app_Abarrotes/templates/base.html`:
 
@@ -363,7 +364,7 @@ Crea o edita `app_Abarrotes/templates/base.html`:
 </html>
 ```
 
-**18. En el archivo navbar.html incluir las opciones...**
+**18. En el archivo `navbar.html` incluir las opciones...**
 
 Crea o edita `app_Abarrotes/templates/navbar.html`:
 
@@ -426,7 +427,7 @@ Crea o edita `app_Abarrotes/templates/navbar.html`:
 </nav>
 ```
 
-**19. En el archivo footer.html incluir derechos de autor,fecha del sistema y "Creado por Ing. Eliseo Nava, Cbtis 128" y mantenerla fija al final de la página.**
+**19. En el archivo `footer.html` incluir derechos de autor, fecha del sistema y "Creado por Ing. Eliseo Nava, Cbtis 128" y mantenerla fija al final de la página.**
 
 Crea o edita `app_Abarrotes/templates/footer.html`:
 
@@ -441,7 +442,7 @@ Crea o edita `app_Abarrotes/templates/footer.html`:
 </footer>
 ```
 
-**20. En el archivo inicio.html se usa para colocar información del sistema más una imagen tomada desde la red sobre abarrotes.**
+**20. En el archivo `inicio.html` se usa para colocar información del sistema más una imagen tomada desde la red sobre abarrotes.**
 
 Crea o edita `app_Abarrotes/templates/inicio.html`:
 
@@ -476,4 +477,242 @@ Crea o edita `app_Abarrotes/templates/inicio.html`:
 </div>
 {% endblock %}
 ```
-Aquí tienes una imagen de una tienda de abarrotes que se utilizará en la página de inicio.
+
+### **A continuación, la parte que faltaba para completar el CRUD de Empleados y la configuración final:**
+
+**21. Configuración de `settings.py` para la aplicación `app_Abarrotes` y `templates`**
+
+Edita el archivo `backend_Abarrotes/backend_Abarrotes/settings.py`.
+
+Asegúrate de agregar `app_Abarrotes` a `INSTALLED_APPS`:
+
+```python
+# backend_Abarrotes/backend_Abarrotes/settings.py
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app_Abarrotes', # ¡Asegúrate de que tu aplicación esté aquí!
+]
+```
+
+Y configura `TEMPLATES` para que Django sepa dónde buscar tus archivos HTML. Es importante que `DIRS` apunte a la carpeta `templates` dentro de tu app:
+
+```python
+# backend_Abarrotes/backend_Abarrotes/settings.py
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'app_Abarrotes' / 'templates'], # Agrega esta línea para que Django busque templates en la carpeta de la app
+        'APP_DIRS': True, # Esto es importante si tienes templates específicos de la app
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+
+**22. En el archivo `urls.py` del proyecto (`backend_Abarrotes`)**
+
+Edita `backend_Abarrotes/backend_Abarrotes/urls.py` para incluir las URLs de tu aplicación `app_Abarrotes`:
+
+```python
+# backend_Abarrotes/backend_Abarrotes/urls.py
+from django.contrib import admin
+from django.urls import path, include # Importa include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('app_Abarrotes.urls')), # Incluye las URLs de tu app
+]
+```
+
+**23. Crear `urls.py` para la aplicación `app_Abarrotes`**
+
+Crea o edita el archivo `app_Abarrotes/urls.py`:
+
+```python
+# app_Abarrotes/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.inicio_abarrotes, name='inicio_abarrotes'),
+    path('empleados/', views.ver_empleados, name='ver_empleados'),
+    path('empleados/agregar/', views.agregar_empleado, name='agregar_empleado'),
+    path('empleados/actualizar/<int:id_empleado>/', views.actualizar_empleado, name='actualizar_empleado'),
+    path('empleados/borrar/<int:id_empleado>/', views.borrar_empleado, name='borrar_empleado'),
+]
+```
+
+**24. Crear los archivos HTML para EMPLEADO (continuación)**
+
+**`app_Abarrotes/templates/empleado/agregar_empleado.html`**
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h2 class="mb-0"><i class="fas fa-user-plus me-2"></i>Agregar Nuevo Empleado</h2>
+            </div>
+            <div class="card-body">
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="puesto" class="form-label">Puesto</label>
+                        <input type="text" class="form-control" id="puesto" name="puesto" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="salario_hora" class="form-label">Salario por Hora</label>
+                        <input type="number" step="0.01" class="form-control" id="salario_hora" name="salario_hora" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha_contratacion" class="form-label">Fecha de Contratación</label>
+                        <input type="date" class="form-control" id="fecha_contratacion" name="fecha_contratacion" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="horas_semanales" class="form-label">Horas Semanales</label>
+                        <input type="number" class="form-control" id="horas_semanales" name="horas_semanales" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="departamento" class="form-label">Departamento</label>
+                        <input type="text" class="form-control" id="departamento" name="departamento" required>
+                    </div>
+                    <button type="submit" class="btn btn-success-custom"><i class="fas fa-save me-2"></i>Guardar Empleado</button>
+                    <a href="{% url 'ver_empleados' %}" class="btn btn-secondary"><i class="fas fa-arrow-left me-2"></i>Volver a Empleados</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+```
+
+**`app_Abarrotes/templates/empleado/ver_empleados.html`**
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                <h2 class="mb-0"><i class="fas fa-users me-2"></i>Listado de Empleados</h2>
+                <a href="{% url 'agregar_empleado' %}" class="btn btn-light btn-sm"><i class="fas fa-plus me-1"></i>Agregar Empleado</a>
+            </div>
+            <div class="card-body">
+                {% if empleados %}
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Puesto</th>
+                                <th>Salario/Hora</th>
+                                <th>Fecha Contratación</th>
+                                <th>Horas Semanales</th>
+                                <th>Departamento</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for empleado in empleados %}
+                            <tr>
+                                <td>{{ empleado.id }}</td>
+                                <td>{{ empleado.nombre }}</td>
+                                <td>{{ empleado.puesto }}</td>
+                                <td>${{ empleado.salario_hora }}</td>
+                                <td>{{ empleado.fecha_contratacion|date:"d/m/Y" }}</td>
+                                <td>{{ empleado.horas_semanales }}</td>
+                                <td>{{ empleado.departamento }}</td>
+                                <td class="text-center">
+                                    <a href="{% url 'actualizar_empleado' empleado.id %}" class="btn btn-warning btn-sm me-2" title="Actualizar"><i class="fas fa-edit"></i></a>
+                                    <a href="{% url 'borrar_empleado' empleado.id %}" class="btn btn-danger btn-sm" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-info" role="alert">
+                    No hay empleados registrados en el sistema.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+```
+
+**`app_Abarrotes/templates/empleado/actualizar_empleado.html`**
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-warning text-white">
+                <h2 class="mb-0"><i class="fas fa-user-edit me-2"></i>Actualizar Empleado: {{ empleado.nombre }}</h2>
+            </div>
+            <div class="card-body">
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ empleado.nombre }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="puesto" class="form-label">Puesto</label>
+                        <input type="text" class="form-control" id="puesto" name="puesto" value="{{ empleado.puesto }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="salario_hora" class="form-label">Salario por Hora</label>
+                        <input type="number" step="0.01" class="form-control" id="salario_hora" name="salario_hora" value="{{ empleado.salario_hora }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha_contratacion" class="form-label">Fecha de Contratación</label>
+                        <input type="date" class="form-control" id="fecha_contratacion" name="fecha_contratacion" value="{{ empleado.fecha_contratacion|date:'Y-m-d' }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="horas_semanales" class="form-label">Horas Semanales</label>
+                        <input type="number" class="form-control" id="horas_semanales" name="horas_semanales" value="{{ empleado.horas_semanales }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label
+
+
+
